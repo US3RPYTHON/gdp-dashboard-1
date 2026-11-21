@@ -21,14 +21,11 @@ elif page == "Create":
             if password == st.secrets["passwords"]["owner"]:
                 st.session_state.logged_in = True
                 st.rerun()
-                if st.button("Log out"):
-                    st.session_state.logged_in = False
-                    st.rerun()
             else:
                 st.error("Incorrect password.")
 else:
     st.write("question creator")
-
-if st.button("Log out"):
-    st.session_state.logged_in = False
-    st.rerun()
+    
+    if st.button("Log out"):
+        st.session_state.logged_in = False
+        st.rerun()
